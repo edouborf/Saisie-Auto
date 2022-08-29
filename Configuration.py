@@ -20,8 +20,8 @@ la_posi = [
 liste = list(CE.dictio.keys())
 
 def lecture_clique():
-    with keyboard.Events as events:
-        event = events.ge(6)
+    with keyboard.Events() as events:
+        event = events.get(6)
         if format(event) == 'Press(key=Key.esc)' or format(event) == 'Release(key=Key.esc)':
             la_posi = sy.position()
             return la_posi[0], la_posi[1]
