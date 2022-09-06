@@ -9,7 +9,7 @@ import ast
 sy.PAUSE = 0
 from Coordonnées import CoordonnéesEcran
 CE = CoordonnéesEcran
-path = 'S/Lille/METHODES/configurations.ini'
+path = 'S:/Lille/METHODES/configurations.ini'
 profile = [
     'Edouard']
 choix2 = [
@@ -134,18 +134,20 @@ def save_config(config):
 def config_choix(sta, choix1):
     choix1 = '0'
     if choix1 == '0':
-        choix1 = sy.confirm(text = 'Veuillez faire un choix', title = 'Demarage', buttons = [
+        choix1 = sy.confirm(text = 'Veuillez faire un choix', title = 'Démarrage', buttons = [
             'Suivant',
             'Charger une config',
             'Ajouter une config',
-            'Supprimer une config'])
+            'Supprimer une config',
+            'Informations',
+            'Quitter'])
     if choix1 == 'Charger une config':
         fenetre_charger()
         lire_config()
         choix1 = '0'
     elif choix1 == 'Supprimer une config':
         fenetre_supprimer()
-        if sy.confirm(text = 'Etes vous sure de vouloir supprimer la configuration', title = 'Confirmation', buttons = [
+        if sy.confirm(text = 'Etes vous sûr de vouloir supprimer la configuration ?', title = 'Confirmation', buttons = [
             'Oui',
             'Annuler']) == 'Oui':
             supprimer_config()
@@ -157,21 +159,27 @@ def config_choix(sta, choix1):
             'Annuler',
             'Modifier'])
         if choix1 == 'Enregistrer':
-            profile[0] = sy.prompt(text = 'Veuillez nommer la configuration', title = 'Configuration', defualt = '')
+            profile[0] = sy.prompt(text = 'Veuillez nommer la configuration', title = 'Configuration', default = '')
             create_config()
             choix1 = '0'
         elif choix1 == 'Modifier':
             choix1 = 'Ajouter une config'
         else:
             choix1 = '0'
+    elif choix1 == 'Informations':
+        sy.confirm(text = ' - Rentrez toutes les informations nécessaires dans l\'Excel\n - Votre presse papier va être écrasé\n - Les coordonnées sont très importantes et très fragiles\n - Une configuration par écran\n - Votre ordinateur est inutilisable pendant les 2 minutes qui suivent', title = 'Informations', buttons = ["D'accord"])
     elif choix1 == 'Suivant':
-        return
-    config_choix(0, '0')
+        return 0
+    elif choix1 == 'Quitter':
+        return -1
+    temp = config_choix(0, '0')
+    if temp == -1:
+        return -1
 
 
 
 class Configu:
 
     def execute(cls):
-        config_choix(0, '0')
-        return CE.dictio
+        temp = config_choix(0, '0')
+        return CE.dictio, temp

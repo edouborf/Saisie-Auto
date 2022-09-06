@@ -1,1 +1,30 @@
 # Saisie-Auto
+
+Fonctions ajoutées :
+
+ - Flexibilité avec le nombre de composants et d'opérations
+    6 composants max
+    15 opérations max
+    L'ordre des composants n'est pas obligatoire mais ça peut faire gagner du temps
+
+ - Composants dans les opérations indiquées 
+    mélange --> Extrusion
+    inserts --> Moulage
+    autres --> Conditionnement
+ 
+ - Détection si changements de pixels 
+    fenêtre de rentrée du code article
+    ajout d'une opération 
+    ajout d'un composant
+
+ - L'opération 'plateaux' devient un composant
+
+ - Baisse du nombre de coordonées à configurer (avec calculs de pixels qui sont statiques peu importe l'écran)
+
+ - Attente pour sélectionner l'article (code sylob non présent dans l'Excel) 
+
+- Meilleure ergonomie sur les valeurs récupérées de Excel
+
+ - Bouton fermer sur le menu
+
+ - Bouton informations sur le menu 

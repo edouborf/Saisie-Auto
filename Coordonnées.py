@@ -20,7 +20,6 @@ class CoordonnéesExcel:
                 self.ws.Range(self.celulle4 + str(i)).Value,        #                   ==> QTE (CELLULE)
                 self.ws.Range(self.celulle5 + str(i)).Value])       # Valeur à droite   ==> QTE POUR (CELLULE)
             i += 1
-        print(len(self.liste))
 
     def get_coordonnées(self):
         #print(self.liste[0])
@@ -79,56 +78,32 @@ class CoordonnéesEcran:
         'Espace ajouter': [
             (0, 0),
             [
-                'Dans l\'activité: gérer les données techniques placez-vous sur: l\'espace blanc à droite du bouton ajouter, cliquez sur échap pour enregistrer']],
+                'Dans l\'activité: gérer les données techniques, placez-vous sur le bouton AJOUTER sans cliquer dessus, cliquez sur échap pour enregistrer']],
+        'Fenêtre ajouter': [
+            (0, 0),
+            [
+                'Dans l\'activité: gérer les données techniques, cliquez sur le bouton AJOUTER puis sur la loupe avec un + à l\'intérieur, placez vous sur la bande de votre couleur SYLOB à droite de RECHERCHE SUR LES ARTICLES, soyez bien sur la bande de couleur, cliquez sur échap pour enregistrer, puis annulez']],
         'Dossier': [
             (0, 0),
             [
-                'Basculez au bas de la page et placez-vous sur le dossier, cliquez sur échap pour enregistrer']],
-        'Composant': [
-            (0, 0),
-            [
-                'Basculez au bas de la page et Cliquez sur le dossier et placez-vous sur: ajouter un composant, cliquez sur échap pour enregistrer']],
-        'Dossier2': [
-            (0, 0),
-            [
-                'Apres le rajout de composant, basculez au bas de la page et placez-vous sur le dossier, cliquez sur échap pour enregistrer']],
-        'ChoixDt': [
-            (0, 0),
-            [
-                'Basculez au bas de la page et Cliquez sur le dossier et placez-vous sur: importer des DT, cliquez sur échap pour enregistrer']],
-        'Sans Insert': [
-            (0, 0),
-            [
-                'Au niveau du rajout de modele de DT placez-vous sur le petit dossier à SANS INSERT, cliquez sur échap pour enregistrer']],
-        'Insert': [
-            (0, 0),
-            [
-                'Au niveau du rajout de modele de DT placez-vous sur le petit dossier à INSERT, cliquez sur échap pour enregistrer']],
+                'Allez dans une donnée technique complète en mode EDITION, basculez au bas de la page et placez-vous sur le texte juste à droite du dossier (il doit être souligné), cliquez sur échap pour enregistrer']],
         'Operation': [
             (0, 0),
             [
-                'Basculez au bas de la page et placez-vous sur l\'opération info génerales, cliquez sur échap pour enregistrer']],
-        'Operation modif': [
+                'Basculez en haut de la page, cliquez sur le texte à droite du dossier et placez-vous sur AJOUTER UNE OPÉRATION, cliquez sur échap pour enregistrer']],
+        'Fenetre Operation': [
             (0, 0),
             [
-                'Cliquez sur l\'operation info générales et placez-vous sur modifier l\'operation, cliquez sur échap pour enregistrer']],
-        'Operation sans ins': [
+                'Cliquez sur AJOUTER UNE OPÉRATION et placez-vous sur le champ gris à droite de OPÉRATION MODELE, cliquez sur échap pour enregistrer, puis annulez']],
+        'Composant': [
             (0, 0),
             [
-                'Supprimez une opération, basculez au bas de la page et placez-vous sur l\'opération info génerales, cliquez sur échap pour enregistrer']],
-        'Operation sans ins modif': [
+                'Basculez en haut de la page, cliquez sur la première opération, puis sur AJOUTER UNE OPÉRATION AU DESSUS, mettez une opération modèle quelconque, quittez, puis cliquez sur l\'opération que vous venez de créer, placez vous sur AJOUTER UN COMPOSANT, cliquez sur échap pour enregistrer, puis supprimez l\'opération que vous venez de créer']],
+        'Fenetre Composant': [
             (0, 0),
             [
-                'Après avoir supprimé une opération, cliquez sur l\'operation info générales et placez-vous sur modifier l\'operation, cliquez sur échap pour enregistrer']],
+                'Cliquez sur AJOUTER UN COMPOSANT et placez-vous sur le champ gris à droite de ARTICLE, cliquez sur échap pour enregistrer, puis annulez']],
         'Commentaire': [
             (0, 0),
             [
-                'Ouvrez une opération, basculez au bas et placez-vous sur l\'espace de commentaire, cliquez sur échap pour enregistrer']],
-        'Espace Valider': [
-            (0, 0),
-            [
-                'Ouvrez une opération, basculez au bas et placez-vous sur l\'espace à gauche du bouton valider, cliquez sur échap pour enregistrer']],
-        'Fermer': [
-            (0, 0),
-            [
-                'Basculez au bas de la page et placez-vous sur le bouton fermer, cliquez sur échap pour enregistrer']] }
+                'Ouvrez une opération, basculez au bas et placez-vous en bas à droite de la zone de texte de l\'espace de commentaire, cliquez sur échap pour enregistrer']]}

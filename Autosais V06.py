@@ -1,7 +1,7 @@
 class Cancel(Exception):
     pass
 
-from Composants import Conditionnement, Insert, Melange
+from Composants import Composants
 from Coordonnées import CoordonnéesExcel
 from Coordonnées import CoordonnéesEcran as CE
 from Operations import Initiation
@@ -9,8 +9,15 @@ from Operations import Operation
 from Configuration import Configu
 from Objet_move import Move
 import pyautogui as sy
+import sys
 from win32com.client import GetObject
 import time
+
+
+#while(True): # test récupération couleur
+    #print(PIL.ImageGrab.grab().load()[100,100])
+
+
 while(True):
     try:
         xl = GetObject(None, 'Excel.Application')
@@ -27,22 +34,22 @@ coef1 = [0]
 coef = [0]
 
 operation = [Operation]
-melange = [Melange]
-insert = [Insert]
-conditionnement = [Conditionnement]
+composants = [Composants]
 
 comm_de = ['Debut']
 CXl = CoordonnéesExcel(wb, 'Envoi Sylob', 'G', 'H', 'I', 'J', 'K')
-CE.dictio = Configu().execute()
+CE.dictio, fin = Configu().execute()
+if fin == -1:
+    sys.exit()
+
 liste = list(CE.dictio.keys())
 #gamme = move.ex_dir('Get xl', CXl.get_coordonnées())
 
-# print("test")
-
-Operation.set(CE.dictio, wb, CE.dictio['Operation'][0], CE.dictio['Operation sans ins'][0], CE.dictio['Operation modif'][0], CE.dictio['Operation sans ins modif'][0], CE.dictio['Commentaire'][0], CE.dictio['Espace Valider'][0], CE.dictio['Fermer'][0])
+Operation.set(CE.dictio, wb, CE.dictio['Dossier'][0], CE.dictio['Operation'][0], CE.dictio['Commentaire'][0], CE.dictio['Fenetre Operation'])
 Operation.set_pause(PAUSE)
 
-# print("test")
+Composants.set(CE.dictio, wb, CE.dictio['Dossier'][0], CE.dictio['Composant'][0], CE.dictio['Fenetre Composant'])
+Composants.set_pause(PAUSE)
 
 Initiation.set_pause(PAUSE)
 #p_init = Initiation(wb1 = wb, coordonées = CE.dictio, etablissement = 'LILLE', code_article = CXl.get_coordonnées(), code = CXl.get_coordonnées(), libellé = CXl.get_coordonnées(), code_composant = CXl.get_coordonnées(), poids = CXl.get_coordonnées(), comm_composant = CXl.get_coordonnées(), gamme1 = gamme)
@@ -51,33 +58,24 @@ Initiation.set_pause(PAUSE)
 while CXl.read_contenu() != False:
     match CXl.read_contenu():
         case 'infos':
-            print(CXl.get_itération())
-            info_gén = Initiation(wb1 = wb, coordonées = CE.dictio, etablissement = CXl.get_coordonnées(), code_article = CXl.get_coordonnées(), code = CXl.get_coordonnées(), libellé = CXl.get_coordonnées()) 
-            print(info_gén.etablissement)
-            print(info_gén.code_article)
-            print(info_gén.code)
-            print(info_gén.libellé)
+            info_gén = Initiation(wb1 = wb, coordonées = CE.dictio, code_article = CXl.get_coordonnées(), etablissement = CXl.get_coordonnées(), code = CXl.get_coordonnées(), libellé = CXl.get_coordonnées()) 
+            #print(info_gén.etablissement) #//! La valeur de Lille est mise automatiquement vu que les menus déroulants ne veulent pas de ^V                                   
 
         case 'mélange':
-            tempMél = Melange(melange = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
-            melange.append(tempMél)
-            #print(tempMél)
+            tempCom = Composants("Mélange", code = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
+            composants.append(tempCom)
 
         case 'insert':
-            tempIns = Insert(insert = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
-            insert.append(tempIns)
-            #print(tempIns)
+            tempCom = Composants("Insert", code = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
+            composants.append(tempCom)
 
         case 'conditionnement':
-            tempCon = Conditionnement(conditionnement = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
-            conditionnement.append(tempCon)
-            #print(tempCon)
+            tempCom = Composants("Conditionnement", code = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
+            composants.append(tempCom)
 
         case 'opération':
-            tempOpé = Operation(centre = CXl.liste[CXl.get_itération()][1], tps_reg = CXl.liste[CXl.get_itération()][2], tps_fab =  CXl.liste[CXl.get_itération()][3], commentaire = CXl.liste[CXl.get_itération()][4])
+            tempOpé = Operation(centre = CXl.liste[CXl.get_itération()][1], tps_reg = CXl.liste[CXl.get_itération()][3], tps_fab =  CXl.liste[CXl.get_itération()][4], commentaire = CXl.liste[CXl.get_itération()][2])
             operation.append(tempOpé)
-            #print(tempOpé)
-            
             
 
         case _:     # default
@@ -88,18 +86,15 @@ while CXl.read_contenu() != False:
 
 print("fin de lecture") 
 
+"""
 for m in melange:
     print(m)
 
-for i in insert:
-    print(i)
 
-for c in conditionnement:
+for c in composants:
     print(c)
 
-for o in operation:
-    print(o)
-
+"""
 
 # Récupération effectuée
 
@@ -108,43 +103,52 @@ for o in operation:
 def main():
     variri = sy.confirm(text = 'Veuillez faire un choix (lors de la saisie: appuier sur échap pour arreter)"', title = 'Saisie', buttons = ['Commencer','Configurer','Annuler'])
     if variri == 'Configurer':
-        CE.dictio = Configu().execute()
+        CE.dictio, fin = Configu().execute()
+        print(fin)
+        if fin == -1:
+            sys.exit()
         coef1[0] = sy.confirm(text = 'Choisir la vitesse de saisie(inférieur à 1 ==> ++rapide)', title = 'Saisie', buttons = ['0.4','0.6','0.8','1','1.2','1.4','1.8','2'])
         coef[0] = float(coef1[0])
         Operation.set_speed(coef[0])
         Initiation.set_speed(coef[0])
-        comm_de[0] = sy.confirm(text = 'Choisir un type de saisie', title = 'Saisie', buttons = ['Saisie complete','Saisie partielle','Annuler'])
-        if comm_de[0] == 'Saisie partielle':
-            comm_de[0] = sy.confirm(text = 'Choisir l\'étape à partir de laquelle vous voulez commencer', title = 'Operation', buttons = ['Debut','Composant','Import DT','Remplissage des ops'])
-        elif comm_de[0] == 'Annuler':
-            variri = comm_de[0]
-        else:
-            comm_de[0] = 'Debut'
+        Composants.set_speed(coef[0])
+        comm_de[0] = 'Debut'
     if variri == 'Annuler':
         raise Cancel
     start_time = time.time()
 
     # Execution
+    
 
     info_gén.p_ajouter()
 
-    for m in melange:
-        m.execute()
+    for o in operation:     #! L'opération 0 n'existe pas !! 
+        if o != operation[0]:
+            o.i[1] = o.centre
+            if str(o.move.ex_dir('Get xl', o.i))[0] != 'A': # Si l'opération est un plateaux --> on le passe en composants
+                o.execute()
+            else:
+                composants.append(Composants("Plateaux", code = o.centre, qte =  o.tps_reg, qte_pour = o.tps_fab))
+               
+    
 
-    for i in insert:
-        i.execute()
+    # OK
 
-    for c in conditionnement:
-        c.execute()
+    precedent = ""          # Si le type du composant d'avant est le même que ce composant, on ne change pas l'opération
+    for c in composants:    #! Le composant 0 n'existe pas !! 
+        if c != composants[0]:
+            res = 0
+            res = c.execute(precedent)
+            if res != -1:
+                precedent = c.type
+    
+    # OK
 
-    for o in operation:
-        o.execute()
-
-
-    temps = str(time.time() - start_time)
-    sy.confirm(text = temps, title = 'Fin de saisie', buttons = [
+    temps = time.time() - start_time
+    sy.confirm(text = ' Temps du transfert : ' + str(round(temps,3)) + ' secondes', title = 'Fin de saisie', buttons = [
         'ok'])
 
+    # OK
 
 def mains():
     try:

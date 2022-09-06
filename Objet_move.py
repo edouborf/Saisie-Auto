@@ -65,6 +65,9 @@ class Move:
             if self.séquence[i] == 'Scroll': 
                 sy.scroll(-1800)
                 sortir(0.1)
+            if self.séquence[i] == 'Scroll Up': 
+                sy.scroll(1800)
+                sortir(0.1)
             if self.séquence[i] == 'Wait': # 'Wait', 1.5
                 sortir(self.séquence[i + 1])
             if self.séquence[i] == 'Type': # 'Type', 'dgdg'
@@ -75,6 +78,8 @@ class Move:
                 taber('tab', self.séquence[i + 1])
             if self.séquence[i] == 'Write': # 'Write', 'mach'
                 sy.write(self.séquence[i + 1])
+            if self.séquence[i] == 'Press 2': # Cliquer sur deux touches du clavier 'tab', 'enter'
+                sy.hotkey(self.séquence[i + 1],self.séquence[i + 2])
 
 
     def ex_dir(self, *args): # LEs 
@@ -86,17 +91,17 @@ class Move:
 
 
     def excel_paste(self, coordonées, t):
-        paper = coordonées[0]
+        
+
         cell = coordonées[1]
-        ws = self.wb.Sheets(paper)
+        ws = self.wb.Sheets("FEUILLE GÉNÉRALE")
         valeur = ws.Range(cell).Value
         type_unicode(valeur)
         sortir(t)
 
 
     def excel_get(self, coordonées):
-        paper = coordonées[0]
+
         cell = coordonées[1]
-        ws = self.wb.Sheets(paper)
+        ws = self.wb.Sheets("FEUILLE GÉNÉRALE")
         self.retour = ws.Range(cell).Value
-        print(self.retour)
