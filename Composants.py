@@ -70,10 +70,6 @@ class Composants:
     def allerComposants(self):
         self.move.ex_dir('Click', Composants.c_dossier2, 'Wait' , 0.2, 'Click', Composants.c_composants, 'Wait', 0.3)
 
-    @classmethod    
-    def test(self, t):
-        t = t+1
-
     def entrerArticle(self):
         
         self.i[1] = self.code
@@ -130,7 +126,7 @@ class Composants:
             while temp[j] == ' ':
                 j=j+1
 
-            while j < len(temp) and temp[j] != ' ':
+            while j < len(temp) and (temp[j].isnumeric() == True or temp[j] == ',' or temp[j]== "."):
                 qte2 = qte2 + temp[j]
                 j=j+1
 
@@ -144,7 +140,7 @@ class Composants:
             while temp[j] == ' ':
                 j=j+1
 
-            while j < len(temp) and temp[j] != ' ':
+            while j < len(temp) and (temp[j].isnumeric() == True or temp[j] == ',' or temp[j]== "."):
                 qte2 = qte2 + temp[j]
                 j=j+1
 

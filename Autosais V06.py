@@ -119,7 +119,7 @@ def main():
 
     # Execution
     
-
+    """
     info_gén.p_ajouter()
 
     for o in operation:     #! L'opération 0 n'existe pas !! 
@@ -130,7 +130,7 @@ def main():
             else:
                 composants.append(Composants("Plateaux", code = o.centre, qte =  o.tps_reg, qte_pour = o.tps_fab))
                
-    
+    """
 
     # OK
 

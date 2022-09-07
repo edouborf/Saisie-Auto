@@ -21,10 +21,18 @@ Fonctions ajoutées :
 
  - Baisse du nombre de coordonées à configurer (avec calculs de pixels qui sont statiques peu importe l'écran)
 
- - Attente pour sélectionner l'article (code sylob non présent dans l'Excel) 
+ - Attente pour sélectionner l'article (code sylob non présent dans l'Excel, il peut y avoir plusieurs article pour un code devis) 
 
-- Meilleure ergonomie sur les valeurs récupérées de Excel
+ - Meilleure ergonomie sur les valeurs récupérées de Excel
 
  - Bouton fermer sur le menu
 
  - Bouton informations sur le menu 
+
+Informations de flexibilité : 
+
+ - Suppression d'une donnée technique possible (décale le bouton ajouter)
+
+ - Recherche déjà en cours d'un article dans la fenêtre d'ajout pour la sélection de l'article prise en compte
+
+ - Peut y avoir déjà des données techniques (Attention si le code est le même ça va sur la donnée technique existante)
