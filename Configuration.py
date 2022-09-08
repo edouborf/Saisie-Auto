@@ -167,7 +167,7 @@ def config_choix(sta, choix1):
         else:
             choix1 = '0'
     elif choix1 == 'Informations':
-        sy.confirm(text = ' - Rentrez toutes les informations nécessaires dans l\'Excel\n - Votre presse papier va être écrasé\n - Les coordonnées sont très importantes et très fragiles\n - Une configuration par écran\n - Votre ordinateur est inutilisable pendant les 2 minutes qui suivent', title = 'Informations', buttons = ["D'accord"])
+        sy.confirm(text = ' - Rentrez toutes les informations nécessaires dans l\'Excel\n\n - Si il y a une erreur dans Sylob (message rouge au haut de la page), actualisez là\n\n - Attention à ce que Sylob prenne toute la taille de l\'écran (Actualisez si nécessaire, touche f5 ou la flèche qui boucle en haut à gauche)\n\n - Attention à ce que le ruban à gauche soit visible ou non, il faut qu\'il y ait les mêmes comme la configuration que celles quand bous avez configuré\n\n - Votre presse papier va être écrasé\n\n - Les coordonnées sont fragiles et très importantes\n\n - Une configuration par écran\n\n - Votre ordinateur est inutilisable pendant les 2 minutes qui suivent', title = 'Informations', buttons = ["D'accord"])
     elif choix1 == 'Suivant':
         return 0
     elif choix1 == 'Quitter':

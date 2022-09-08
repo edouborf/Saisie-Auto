@@ -117,11 +117,14 @@ class Composants:
 
         self.move.ex_dir('Wait', 0.4)
         qte2 = ""
+        
         self.i[1] = self.qte
 
-        if self.move.ex_dir('Get xl', self.i)!= None:
+        if self.move.ex_dir('Get xl', self.i)!= None or self.type == 'Plateaux':
             temp = str(self.move.ex_dir('Get xl', self.i))
             j=0
+            if temp == "None":
+                temp = str(1)
 
             while temp[j] == ' ':
                 j=j+1

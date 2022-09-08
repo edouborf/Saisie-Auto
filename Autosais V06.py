@@ -87,14 +87,14 @@ while CXl.read_contenu() != False:
 print("fin de lecture") 
 
 """
-for m in melange:
-    print(m)
+for o in operation:
+    print(o)
 
 
 for c in composants:
     print(c)
-
 """
+
 
 # Récupération effectuée
 
@@ -119,7 +119,7 @@ def main():
 
     # Execution
     
-    """
+
     info_gén.p_ajouter()
 
     for o in operation:     #! L'opération 0 n'existe pas !! 
@@ -128,10 +128,8 @@ def main():
             if str(o.move.ex_dir('Get xl', o.i))[0] != 'A': # Si l'opération est un plateaux --> on le passe en composants
                 o.execute()
             else:
-                composants.append(Composants("Plateaux", code = o.centre, qte =  o.tps_reg, qte_pour = o.tps_fab))
-               
-    """
-
+                composants.append(Composants("Plateaux", code = o.centre, qte =  o.tps_fab, qte_pour = o.tps_reg)) #On échange les quantitées
+         
     # OK
 
     precedent = ""          # Si le type du composant d'avant est le même que ce composant, on ne change pas l'opération

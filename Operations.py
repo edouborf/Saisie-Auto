@@ -85,7 +85,7 @@ class Operation:
         self.existe = True
         self.tabulations = {
             'Centre de charge': 5,
-            'CC<>reglage': 20,
+            'CC<>reglage': 23,
             'Reglage<>fab': 7 }
         self.liste = list(self.tabulations)
 
@@ -148,7 +148,7 @@ class Operation:
                 kb.release(Key.backspace)
                 
         else:
-            self.move.ex_dir('Wait', 0.2, 'Press', 'enter', 'Wait', 0.3)
+            self.move.ex_dir('Wait', 0.2, 'Press', 'enter', 'Wait', 0.6)
 
         self.l[0] = 1
 
