@@ -28,7 +28,7 @@ class CoordonnéesExcel:
             c = self.liste[self.itération]
             
         except:
-            print('Erreur: Le nombre maximum de coordonnées est atteint')
+            print('Le nombre maximum de coordonnées est atteint')
             c = False
         finally:
             #print(c)
@@ -42,7 +42,7 @@ class CoordonnéesExcel:
             else:
                 c = self.liste[self.itération][0]
         except:
-            print('Erreur: Le nombre maximum de coordonnées est atteint')
+            print('Le nombre maximum de coordonnées est atteint')
             c = False
         finally:
             return c

@@ -94,8 +94,6 @@ for o in operation:
 for c in composants:
     print(c)
 """
-
-
 # Récupération effectuée
 
 
