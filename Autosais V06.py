@@ -59,7 +59,7 @@ while CXl.read_contenu() != False:
     match CXl.read_contenu():
         case 'infos':
             info_gén = Initiation(wb1 = wb, coordonées = CE.dictio, code_article = CXl.get_coordonnées(), etablissement = CXl.get_coordonnées(), code = CXl.get_coordonnées(), libellé = CXl.get_coordonnées()) 
-            #print(info_gén.etablissement) #//! La valeur de Lille est mise automatiquement vu que les menus déroulants ne veulent pas de ^V                                   
+            #print(info_gén.etablissement) #! La valeur de Lille est mise automatiquement vu que les menus déroulants ne veulent pas de ^V                                   
 
         case 'mélange':
             tempCom = Composants("Mélange", code = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
