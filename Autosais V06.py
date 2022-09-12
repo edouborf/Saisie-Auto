@@ -73,7 +73,7 @@ while CXl.read_contenu() != False:
             tempCom = Composants("Conditionnement", code = CXl.liste[CXl.get_itération()][1], qte =  CXl.liste[CXl.get_itération()][3], qte_pour = CXl.liste[CXl.get_itération()][4])
             composants.append(tempCom)
 
-        case 'opération':
+        case 'opération': # Le 3 et le 2 sont inversé avec le "Quantité (Pour)" dans l'Excel qui est à gauche et qui doit être rentré à droite 
             tempOpé = Operation(centre = CXl.liste[CXl.get_itération()][1], tps_reg = CXl.liste[CXl.get_itération()][3], tps_fab =  CXl.liste[CXl.get_itération()][4], commentaire = CXl.liste[CXl.get_itération()][2])
             operation.append(tempOpé)
             

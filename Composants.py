@@ -81,6 +81,7 @@ class Composants:
             while couleur == PIL.ImageGrab.grab().load()[Composants.f_comp[0][0], Composants.f_comp[0][1] + 18] and tps < 2:
                 self.move.ex_dir('Wait', 0.1)
                 tps+= 0.1
+                # On attend si le pixel en dessous de la barre de recherche change de couleur, si c'est le cas, on peut sélectionner le composant
             
             if tps >= 2:
                 self.existe = False
@@ -93,7 +94,7 @@ class Composants:
 
     def changerOpération(self):
 
-        
+        # Ici, pour changer les opérations, il faut taper lettre par lettre pour que sylob prenne en compte
         if self.type == "Plateaux":
             self.remonter()
             self.remonter()
@@ -101,6 +102,7 @@ class Composants:
         elif self.type == "Insert":
             self.remonter()
             self.remonter()
+            # Comme sur Lille, les opérations de moulage peuvent avoir plusieurs désignation, on les essayent toutes du moins au plus précis
             self.move.ex_dir(   "Press", "c", "Press", "o", "Press", "n", "Press", "d", "Press", "i", 'Wait', 1, 
                                 "Press", "r", "Press", "u", "Press", "t", "Press", "i", "Press", "l", 'Wait', 1,
                                 "Press", "p", "Press", "r", "Press", "e", "Press", "s", "Press", "s", "Press", "e", 'Wait', 1,

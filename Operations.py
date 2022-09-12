@@ -42,16 +42,19 @@ class Initiation:
         while couleur == PIL.ImageGrab.grab().load()[self.c_fenetre[0], self.c_fenetre[1]]:
             self.move.ex_dir('Wait', 0.1)
 
-
+        # On continue la recherche de la pièce
         self.move.ex_dir('Wait', 0.2, 'Taber', 4,'Press', 'enter', 'Wait', 0.5, 'Press 2', 'alt', 'r' , 'Wait', 5,
                          'Taber', 7, 'Write', 'Ancien', 'Taber', 2, 'Wait', 0.5, 'Paste xl', self.code_article, 0.2,
                          'Wait', 0.2, 'Taber', 41, 'Wait', 0.2, 'Press', 'enter')
        
+        # Comme il y a une possiblilité d'avoir plusieurs articles pour un code devis, on laisse le choix à l'utilisateur 
         sy.confirm(text = 'Sélectionnez l\'article PUIS appuyez sur OK', title = 'Saisie', buttons = ['OK'])
 
         self.move.ex_dir('Wait', 0.5,'Taber', 4, 'Wait', 0.2, 'Press', self.etablissement[0], 'Press', self.etablissement[1], 'Press', self.etablissement[2], 'Press', self.etablissement[3],
                          'Wait', 0.5, 'Taber', 7, 'Paste xl', self.code, 0.2, 'Taber', 1, 'Paste xl', self.libellé, 0.2, 'Wait', 0.4, 
                          'Press 2','alt', 'v', 'Wait', 0.2, 'Press', 'Enter')
+
+        # Les informations générales sont remplies
 
 
     def set_pause(pause):
@@ -146,6 +149,7 @@ class Operation:
             for loop in range(len(c)):
                 kb.press(Key.backspace)
                 kb.release(Key.backspace)
+                # On efface tout
                 
         else:
             self.move.ex_dir('Wait', 0.2, 'Press', 'enter', 'Wait', 0.6)
