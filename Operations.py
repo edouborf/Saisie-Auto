@@ -43,7 +43,7 @@ class Initiation:
             self.move.ex_dir('Wait', 0.1)
 
 
-        self.move.ex_dir('Wait', 0.2, 'Taber', 4,'Press', 'enter', 'Wait', 0.5, 'Press 2', 'alt', 'r' , 'Wait', 4,
+        self.move.ex_dir('Wait', 0.2, 'Taber', 4,'Press', 'enter', 'Wait', 0.5, 'Press 2', 'alt', 'r' , 'Wait', 5,
                          'Taber', 7, 'Write', 'Ancien', 'Taber', 2, 'Wait', 0.5, 'Paste xl', self.code_article, 0.2,
                          'Wait', 0.2, 'Taber', 41, 'Wait', 0.2, 'Press', 'enter')
        

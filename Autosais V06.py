@@ -41,7 +41,7 @@ CXl = CoordonnéesExcel(wb, 'Envoi Sylob', 'G', 'H', 'I', 'J', 'K')
 CE.dictio, fin = Configu().execute()
 if fin == -1:
     sys.exit()
-
+ 
 liste = list(CE.dictio.keys())
 #gamme = move.ex_dir('Get xl', CXl.get_coordonnées())
 
