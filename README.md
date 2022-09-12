@@ -31,7 +31,7 @@ Fonctions ajoutées / Modifications effectuées :
 
 Informations de flexibilité : 
 
- - Suppression d'une donnée technique possible (décale le bouton ajouter)
+ - Suppression d'une donnée technique possible avant le lancement (écrit un message qui décale le bouton ajouter)
 
  - Recherche déjà en cours d'un article dans la fenêtre d'ajout pour la sélection de l'article prise en compte
 
