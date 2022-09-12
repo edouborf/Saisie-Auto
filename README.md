@@ -1,6 +1,6 @@
 # Saisie-Auto
 
-Fonctions ajoutées :
+Fonctions ajoutées / Modifications effectuées :
 
  - Flexibilité avec le nombre de composants et d'opérations
     6 composants max
