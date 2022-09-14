@@ -153,19 +153,19 @@ class Composants:
 
 
 
-    def remonter(self): # 100% bon
+    def remonter(self): # Permet de remonter un champ
         self.move.ex_dir('Press 2', 'shift', 'tab', 'Wait', 0.2)
 
-    def valider(self):  # 100% bon
+    def valider(self):  # Permet de passer à une nouvelle page
         self.move.ex_dir('Press 2', 'alt', 'n', 'Wait', 0.4)
 
-    def fermer(self):   # 100% bon
+    def fermer(self):   # Permet de valider la page
         self.move.ex_dir('Wait', 0.4, 'Press 2', 'alt', 'v', 'Wait', 0.4)
 
-    def annuler(self):   # 100% bon
+    def annuler(self):  # Permet d'annuler la page
         self.move.ex_dir('Wait', 0.4, 'Press 2', 'alt', 'a', 'Wait', 0.4, 'Press', 'enter', 'Wait', 0.4)
 
-    def __str__(self):
+    def __str__(self):   
         return "Type : " + self.type +  "\n\tCode : " + self.code + "\n\tQuantité : " + self.qte + "\n\tQuantité pour : " + self.qte_pour + "\n\n"
 
 

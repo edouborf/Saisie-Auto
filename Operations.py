@@ -114,9 +114,9 @@ class Operation:
 
     def execute(self):
         if self.ordre == 1:
-            self.opération1() # bon  
+            self.opération1() # On clique sur "créer une opération" seulement si c'est la première  
         if self.centre != None and self.existe == True:
-            self.p_centre()   # bon
+            self.p_centre()   # On rentre le centre de charge
         if self.tps_reg != None and self.existe == True:
             self.temps_reg()  # bon
         if self.tps_fab != None and self.existe == True:
