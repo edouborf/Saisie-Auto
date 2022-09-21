@@ -45,13 +45,14 @@ if fin == -1:
 liste = list(CE.dictio.keys())
 #gamme = move.ex_dir('Get xl', CXl.get_coordonnées())
 
-Operation.set(CE.dictio, wb, CE.dictio['Dossier'][0], CE.dictio['Operation'][0], CE.dictio['Commentaire'][0], CE.dictio['Fenetre Operation'])
+Operation.set(CE.dictio, wb, CE.dictio['Dossier'][0], CE.dictio['Operation'][0], CE.dictio['Commentaire Operation'][0], CE.dictio['Fenetre Operation'])
 Operation.set_pause(PAUSE)
 
 Composants.set(CE.dictio, wb, CE.dictio['Dossier'][0], CE.dictio['Composant'][0], CE.dictio['Fenetre Composant'])
 Composants.set_pause(PAUSE)
 
-Initiation.set_pause(PAUSE)
+Initiation.set_pause(PAUSE)                                                                           	                                                                                    
+
 #p_init = Initiation(wb1 = wb, coordonées = CE.dictio, etablissement = 'LILLE', code_article = CXl.get_coordonnées(), code = CXl.get_coordonnées(), libellé = CXl.get_coordonnées(), code_composant = CXl.get_coordonnées(), poids = CXl.get_coordonnées(), comm_composant = CXl.get_coordonnées(), gamme1 = gamme)
 
 #print(CXl.get_itération())
@@ -99,8 +100,8 @@ for c in composants:
 
 
 def main():
-    variri = sy.confirm(text = 'Veuillez faire un choix (lors de la saisie: appuier sur échap pour arreter)"', title = 'Saisie', buttons = ['Commencer','Configurer','Annuler'])
-    if variri == 'Configurer':
+    val = sy.confirm(text = 'Veuillez faire un choix (lors de la saisie: appuier sur échap pour arreter)"', title = 'Saisie', buttons = ['Commencer','Configurer','Annuler'])
+    if val == 'Configurer':
         CE.dictio, fin = Configu().execute()
         print(fin)
         if fin == -1:
@@ -111,12 +112,13 @@ def main():
         Initiation.set_speed(coef[0])
         Composants.set_speed(coef[0])
         comm_de[0] = 'Debut'
-    if variri == 'Annuler':
+    if val == 'Annuler':
         raise Cancel
     start_time = time.time()
 
     # Execution
     
+   
 
     info_gén.p_ajouter()
 
@@ -129,6 +131,8 @@ def main():
                 composants.append(Composants("Plateaux", code = o.centre, qte =  o.tps_fab, qte_pour = o.tps_reg)) #On échange les quantitées
          
     # OK
+
+
 
     precedent = ""          # Si le type du composant d'avant est le même que ce composant, on ne change pas l'opération
     for c in composants:    #! Le composant 0 n'existe pas !! 
@@ -145,6 +149,14 @@ def main():
         'ok'])
 
     # OK
+
+    for c in composants:
+        if c != composants[0]:
+            if c.type == "Plateaux":
+                composants.remove(c)
+
+#for c in composants:
+#    print(c)
 
 def mains():
     try:

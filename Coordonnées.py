@@ -95,6 +95,10 @@ class CoordonnéesEcran:
             (0, 0),
             [
                 'Cliquez sur AJOUTER UNE OPÉRATION et placez-vous sur le champ gris à droite de OPÉRATION MODELE, cliquez sur échap pour enregistrer, puis annulez']],
+        'Commentaire Operation': [
+            (0, 0),
+            [
+                'Ouvrez une opération, basculez au bas et placez-vous en bas à droite de la zone de texte de l\'espace de commentaire, cliquez sur échap pour enregistrer']],
         'Composant': [
             (0, 0),
             [
@@ -102,8 +106,4 @@ class CoordonnéesEcran:
         'Fenetre Composant': [
             (0, 0),
             [
-                'Cliquez sur AJOUTER UN COMPOSANT et placez-vous sur le champ gris à droite de ARTICLE, cliquez sur échap pour enregistrer, puis annulez']],
-        'Commentaire': [
-            (0, 0),
-            [
-                'Ouvrez une opération, basculez au bas et placez-vous en bas à droite de la zone de texte de l\'espace de commentaire, cliquez sur échap pour enregistrer']]}
+                'Cliquez sur AJOUTER UN COMPOSANT et placez-vous sur le champ gris à droite de ARTICLE, cliquez sur échap pour enregistrer, puis annulez']]}

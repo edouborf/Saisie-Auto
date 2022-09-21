@@ -9,7 +9,7 @@ import ast
 sy.PAUSE = 0
 from Coordonnées import CoordonnéesEcran
 CE = CoordonnéesEcran
-path = 'S:/Lille/METHODES/configurations.ini'
+path = "S:/Lille/METHODES/Copier coller des DT/Code/configurations.ini"
 profile = [
     'Edouard']
 choix2 = [
@@ -64,12 +64,12 @@ def fenetre(langs, le_type):
 
         def charger_la_config():
             profile[0] = selected_langs
-            instruction('Information', f'Vous avez selectioné: {selected_langs}')
+            instruction('Information', f'Vous avez selectionné: {selected_langs}')
 
 
         def supprimer_la_config():
             profile[0] = selected_langs
-            instruction('Information', f'Vous avez selectioné: {selected_langs}')
+            instruction('Information', f'Vous avez selectionné: {selected_langs}')
 
 
         def ajouter_une_config():
@@ -167,7 +167,7 @@ def config_choix(sta, choix1):
         else:
             choix1 = '0'
     elif choix1 == 'Informations':
-        sy.confirm(text = ' - Rentrez toutes les informations nécessaires dans l\'Excel\n\n - Si il y a une erreur dans Sylob (message rouge au haut de la page), actualisez là\n\n - Attention à ce que Sylob prenne toute la taille de l\'écran (Actualisez si nécessaire, touche f5 ou la flèche qui boucle en haut à gauche)\n\n - Attention à ce que le ruban à gauche soit visible ou non, il faut qu\'il y ait les mêmes comme la configuration que celles quand bous avez configuré\n\n - Votre presse papier va être écrasé\n\n - Les coordonnées sont fragiles et très importantes\n\n - Une configuration par écran\n\n - Votre ordinateur est inutilisable pendant les 2 minutes qui suivent', title = 'Informations', buttons = ["D'accord"])
+        sy.confirm(text = ' - Appuyez sur ÉCHAP pour annuler la saisie\n\n - Rentrez toutes les informations nécessaires dans l\'Excel\n\n - Si un composant n\'est pas géré en stock, il y aura un problème d\'affectation sur l\'opération (ce qui n\'est pas si grave)\n\n - Si il y a une erreur dans Sylob (message rouge au haut de la page), actualisez là\n\n - Attention à ce que Sylob prenne toute la taille de l\'écran (Actualisez si nécessaire, touche f5 ou la flèche qui boucle en haut à gauche)\n\n - Attention à ce que le ruban à gauche soit visible ou non, la même situation quand vous avez configuré\n\n - Votre presse papier va être écrasé\n\n - Les coordonnées sont fragiles et très importantes\n\n - Une configuration par écran\n\n - Votre ordinateur est inutilisable pendant les 2 minutes qui suivent', title = 'Informations', buttons = ["D'accord"])
     elif choix1 == 'Suivant':
         return 0
     elif choix1 == 'Quitter':

@@ -51,6 +51,7 @@ class Composants:
 
     def execute(self, precedent):
         if self.ordre == 1:
+            self.move.ex_dir('Wait', 0.7)
             self.allerComposants()
         self.entrerArticle()
         if (precedent != self.type or precedent == "") and self.existe == True:
@@ -77,20 +78,21 @@ class Composants:
         if c != None:
             tps = 0
             couleur = PIL.ImageGrab.grab().load()[Composants.f_comp[0][0],Composants.f_comp[0][1] + 18]   
+            self.move.ex_dir('Wait', 0.4)
             self.move.ex_dir('Paste xl', self.i, 0.2)
-            while couleur == PIL.ImageGrab.grab().load()[Composants.f_comp[0][0], Composants.f_comp[0][1] + 18] and tps < 2:
+            while couleur == PIL.ImageGrab.grab().load()[Composants.f_comp[0][0], Composants.f_comp[0][1] + 18] and tps < 5:
                 self.move.ex_dir('Wait', 0.1)
                 tps+= 0.1
                 # On attend si le pixel en dessous de la barre de recherche change de couleur, si c'est le cas, on peut sélectionner le composant
             
-            if tps >= 2:
+            if tps >= 5:
                 self.existe = False
                 kb = Controller()
                 for loop in range(len(c)):
                     kb.press(Key.backspace)
                     kb.release(Key.backspace)
             else:
-                self.move.ex_dir('Wait', 0.1, 'Press', 'Enter', 'Wait', 0.5, 'Press', 'Enter', 'Wait', 0.5)
+                self.move.ex_dir('Wait', 0.3, 'Press', 'Enter', 'Wait', 0.7, 'Press', 'Enter', 'Wait', 0.7)
 
     def changerOpération(self):
 
@@ -98,20 +100,20 @@ class Composants:
         if self.type == "Plateaux":
             self.remonter()
             self.remonter()
-            self.move.ex_dir("Press", "e", "Press", "x", "Press", "t", "Press", "r", "Press", "u", 'Wait', 0.2, 'Taber', 2)
+            self.move.ex_dir("Press", "e", 'Wait', 0.1, "Press", "x", 'Wait', 0.1, "Press", "t", 'Wait', 0.1, "Press", "r", 'Wait', 0.1, "Press", "u", 'Wait', 0.2, 'Taber', 2)
         elif self.type == "Insert":
             self.remonter()
             self.remonter()
             # Comme sur Lille, les opérations de moulage peuvent avoir plusieurs désignation, on les essayent toutes du moins au plus précis
             self.move.ex_dir(   "Press", "c", "Press", "o", "Press", "n", "Press", "d", "Press", "i", 'Wait', 1, 
-                                "Press", "r", "Press", "u", "Press", "t", "Press", "i", "Press", "l", 'Wait', 1,
-                                "Press", "p", "Press", "r", "Press", "e", "Press", "s", "Press", "s", "Press", "e", 'Wait', 1,
                                 "Press", "p", "Press", "r", "Press", "é", "Press", "p", "Press", "a", "Press", "r", "Press", "a", "Press", "t", "Press", "i", "Press", "o", "Press", "n", 'Wait', 1,
-                                "Press", "p", "Press", "r", "Press", "é", "Press", "p", "Press", "a", "Press", "r", "Press", "a", "Press", "t", "Press", "i", "Press", "o", "Press", "n", "Press", " ", "Press", "i", "Press", "n", "Press", "s", "Press", "e", "Press", "r", 'Wait', 0.2, 'Taber', 2, 'Wait', 0.2)
+                                "Press", "p", "Press", "r", "Press", "é", "Press", "p", "Press", "a", "Press", "r", "Press", "a", "Press", "t", "Press", "i", "Press", "o", "Press", "n", "Press", " ", "Press", "i", "Press", "n", "Press", "s", "Press", "e", "Press", "r", 'Wait', 1,
+                                "Press", "p", "Press", "r", "Press", "e", "Press", "s", "Press", "s", "Press", "e", 'Wait', 1,
+                                "Press", "r", "Press", "u", "Press", "t", "Press", "i", "Press", "l", 'Wait', 0.2, 'Taber', 2, 'Wait', 0.2)
         elif self.type == "Conditionnement":
             self.remonter()
             self.remonter()
-            self.move.ex_dir("Press", "c", "Press", "o", "Press", "n", "Press", "d", "Press", "i", 'Wait', 0.2, 'Taber', 2)
+            self.move.ex_dir("Press", "c", 'Wait', 0.1, "Press", "o", 'Wait', 0.1, "Press", "n", 'Wait', 0.1, "Press", "d", 'Wait', 0.1, "Press", "i", 'Wait', 0.2, 'Taber', 2)
 
 
 
@@ -157,13 +159,17 @@ class Composants:
         self.move.ex_dir('Press 2', 'shift', 'tab', 'Wait', 0.2)
 
     def valider(self):  # Permet de passer à une nouvelle page
-        self.move.ex_dir('Press 2', 'alt', 'n', 'Wait', 0.4)
+        self.move.ex_dir('Press 2', 'alt', 'n', 'Wait', 0.3)
 
     def fermer(self):   # Permet de valider la page
-        self.move.ex_dir('Wait', 0.4, 'Press 2', 'alt', 'v', 'Wait', 0.4)
+        self.move.ex_dir('Wait', 0.4, 'Press 2', 'alt', 'v', 'Wait', 0.3)
 
     def annuler(self):  # Permet d'annuler la page
-        self.move.ex_dir('Wait', 0.4, 'Press 2', 'alt', 'a', 'Wait', 0.4, 'Press', 'enter', 'Wait', 0.4)
+        self.move.ex_dir('Wait', 0.4, 'Press 2', 'alt', 'a', 'Wait', 0.3, 'Press', 'enter', 'Wait', 0.3)
+        
+
+
+
 
     def __str__(self):   
         return "Type : " + self.type +  "\n\tCode : " + self.code + "\n\tQuantité : " + self.qte + "\n\tQuantité pour : " + self.qte_pour + "\n\n"

@@ -4,13 +4,13 @@ Fonctions ajoutées / Modifications effectuées :
 
  - Flexibilité avec le nombre de composants et d'opérations
     6 composants max
-    15 opérations max
+    20 opérations max
     L'ordre des composants n'est pas obligatoire mais ça peut faire gagner du temps
 
  - Composants dans les opérations indiquées 
-    mélange --> Extrusion
-    inserts --> Moulage
-    autres --> Conditionnement
+    Mélange --> Extrusion
+    Fournitures industrielles --> Moulage
+    Autres --> Conditionnement
  
  - Détection si changements de pixels 
     fenêtre de rentrée du code article
