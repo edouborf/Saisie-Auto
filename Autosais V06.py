@@ -100,7 +100,7 @@ for c in composants:
 
 
 def main():
-    val = sy.confirm(text = 'Veuillez faire un choix (lors de la saisie: appuier sur échap pour arreter)"', title = 'Saisie', buttons = ['Commencer','Configurer','Annuler'])
+    val = sy.confirm(text = 'Veuillez faire un choix (lors de la saisie: appuier sur échap pour arreter)\nSoyez sur que le bouton Valider soit visible !!"', title = 'Saisie', buttons = ['Commencer','Configurer','Annuler'])
     if val == 'Configurer':
         CE.dictio, fin = Configu().execute()
         print(fin)

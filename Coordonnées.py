@@ -78,32 +78,32 @@ class CoordonnéesEcran:
         'Espace ajouter': [
             (0, 0),
             [
-                'Dans l\'activité: gérer les données techniques, placez-vous sur le bouton AJOUTER sans cliquer dessus, cliquez sur échap pour enregistrer']],
+                'Dans l\'activité: gérer les données techniques, placez-vous sur le bouton AJOUTER sans cliquer dessus, appuyez sur échap pour enregistrer']],
         'Fenêtre ajouter': [
             (0, 0),
             [
-                'Dans l\'activité: gérer les données techniques, cliquez sur le bouton AJOUTER puis sur la loupe avec un + à l\'intérieur, placez vous sur la bande de votre couleur SYLOB à droite de RECHERCHE SUR LES ARTICLES, soyez bien sur la bande de couleur, cliquez sur échap pour enregistrer, puis annulez']],
+                'Dans l\'activité: gérer les données techniques, cliquez sur le bouton AJOUTER puis sur la loupe avec un + à l\'intérieur, placez vous sur la bande de votre couleur SYLOB à droite de RECHERCHE SUR LES ARTICLES, soyez bien sur la bande de couleur, appuyez sur échap pour enregistrer']],
         'Dossier': [
             (0, 0),
             [
-                'Allez dans une donnée technique complète en mode EDITION, basculez au bas de la page et placez-vous sur le texte juste à droite du dossier (il doit être souligné), cliquez sur échap pour enregistrer']],
+                'Annulez tout et repartez dans l\'activité: gérer les données techniques, ouvrez une donnée technique complète en mode EDITION, basculez au bas de la page et placez-vous sur le texte juste à droite du dossier (le texte doit être souligné), appuyez sur échap pour enregistrer']],
         'Operation': [
             (0, 0),
             [
-                'Basculez en haut de la page, cliquez sur le texte à droite du dossier et placez-vous sur AJOUTER UNE OPÉRATION, cliquez sur échap pour enregistrer']],
+                'Basculez en haut de la page, cliquez sur le texte à droite du dossier et placez-vous sur AJOUTER UNE OPÉRATION, appuyez sur échap pour enregistrer']],
         'Fenetre Operation': [
             (0, 0),
             [
-                'Cliquez sur AJOUTER UNE OPÉRATION et placez-vous sur le champ gris à droite de OPÉRATION MODELE, cliquez sur échap pour enregistrer, puis annulez']],
+                'Cliquez sur AJOUTER UNE OPÉRATION et placez-vous sur le champ gris à droite de OPÉRATION MODELE, appuyez sur échap pour enregistrer']],
         'Commentaire Operation': [
             (0, 0),
             [
-                'Ouvrez une opération, basculez au bas et placez-vous en bas à droite de la zone de texte de l\'espace de commentaire, cliquez sur échap pour enregistrer']],
+                'Repartez dans la page principale de la donnée technique, ouvrez une opération, basculez au bas et placez-vous en bas à droite de la zone de texte de l\'espace de commentaire, appuyez sur échap pour enregistrer']],
         'Composant': [
             (0, 0),
             [
-                'Basculez en haut de la page, cliquez sur la première opération, puis sur AJOUTER UNE OPÉRATION AU DESSUS, mettez une opération modèle quelconque, quittez, puis cliquez sur l\'opération que vous venez de créer, placez vous sur AJOUTER UN COMPOSANT, cliquez sur échap pour enregistrer, puis supprimez l\'opération que vous venez de créer']],
+                'Basculez en haut de la page, cliquez sur l\'opération que vous venez de créer, ensuite placez vous sur AJOUTER UN COMPOSANT, appuyez sur échap pour enregistrer']],
         'Fenetre Composant': [
             (0, 0),
             [
-                'Cliquez sur AJOUTER UN COMPOSANT et placez-vous sur le champ gris à droite de ARTICLE, cliquez sur échap pour enregistrer, puis annulez']]}
+                'Cliquez sur AJOUTER UN COMPOSANT et placez-vous sur le champ gris à droite de ARTICLE, appuyez sur échap pour enregistrer, puis annulez']]}

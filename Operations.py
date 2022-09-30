@@ -30,7 +30,7 @@ class Initiation:
 
     def p_ajouter(self): # bon
 
-        self.move.ex_dir('Wait', 0.2,'Click', self.c_debut,'Wait', 0.5, 'Click', self.c_ajouter, 'Click', self.c_ajouter2, 'Click', self.c_ajouter3, 'Wait', 0.5) # On clique au cas ou il y a eu une suppression
+        self.move.ex_dir('Wait', 0.2, 'Click', self.c_ajouter, 'Click', self.c_ajouter2, 'Click', self.c_ajouter3, 'Wait', 0.5) # On clique au cas ou il y a eu une suppression
         
         # Récupération de la couleur en c_fenetre
 

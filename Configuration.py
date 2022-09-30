@@ -42,7 +42,7 @@ fenetre_ajouter = lambda : fenetre(liste, 'ajouter')
 
 def fenetre(langs, le_type):
     root = tk.Tk()
-    root.geometry('200x100')
+    root.geometry('200x150')
     root.resizable(False, False)
     root.title('Listbox')
     root.columnconfigure(0, weight = 1)
